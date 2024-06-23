@@ -6,12 +6,6 @@
   "version": "io.cordova.hellocordova",
   "description": "Sample Apache Cordova App",
   "author": "Apache Cordova Team",
-  "icons": [
-    {
-      "src": " ",
-      "type": "image/png",
-      "sizes": "57x57"
-    }
-  ],
+  "icons": [],
   "start_url": "index.html"
 }
