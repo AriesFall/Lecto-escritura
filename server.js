@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/Lecto_escritura', {
+mongoose.connect('mongodb+srv://admin:_humberto27@maincluster.36akptz.mongodb.net/Lecto_escritura', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
