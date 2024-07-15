@@ -9,37 +9,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../public/assets/css/tailwind.output.css" />
+    <script src="../../public/css/bootstrap/dist/css/bootstrap.min.css"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
     ></script>
     <script src="../../public/assets/js/init-alpine.js"></script>
-    <script>
-      async function registerUser(event) {
-        event.preventDefault();
-        
-        const nombreCompleto = document.getElementById('nombreCompleto').value;
-        const correo = document.getElementById('correo').value;
-        const contrasena = document.getElementById('contrasena').value;
-        const nivelCuenta = 3;
-
-        const response = await fetch('http://localhost:3000/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            nombreCompleto,
-            correo,
-            contrasena,
-            nivelCuenta
-          })
-        });
-
-        const result = await response.text();
-        alert(result);
-      }
-    </script>
+    <script src="../../Controllers/routes.js"></script>
+    <script src="../../Controllers/create-account.js"></script>
   </head>
   <body>
     <div class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
@@ -52,6 +29,9 @@
           <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
             <div class="w-full">
               <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">Crear cuenta</h1>
+              <!-- Contenedor para el mensaje de cuenta creada exitosamente y error -->
+              <div id="success-message" class="hidden p-4 mb-4 text-sm text-white bg-green-500 rounded-lg"></div>
+              <div id="error-msg" class="hidden p-4 mb-4 text-sm text-white bg-red-500 rounded-lg"></div>
               <form onsubmit="registerUser(event)">
                 <label class="block text-sm">
                   <span class="text-gray-700 dark:text-gray-400">Nombre del alumno</span>
@@ -93,3 +73,4 @@
     </div>
   </body>
 </html>
+
